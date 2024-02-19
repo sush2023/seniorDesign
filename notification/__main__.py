@@ -28,7 +28,8 @@ def send_message():
       if data["user"] == "invalid":
         print("User token invalid")
     elif "token" in data.keys():
-      print("Application token invalid.")
+      if data["token"] == "invalid":
+        print("Application token invalid.")
 
 if __name__ == "__main__":
   po = pushover_init()
