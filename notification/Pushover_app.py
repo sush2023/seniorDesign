@@ -32,6 +32,6 @@ class PushoverApp:
             self._handleException(repr(error))
             self.result = False
             return
-        
+       print("hello") 
         self.result = True
             
