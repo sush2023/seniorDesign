@@ -8,25 +8,25 @@ import matplotlib.pyplot as plt
 iteration = 0
 while True:
     inp = input("Press Enter to Start")
-    serial_trigger = '89'
+    serial_trigger = '8'
     #match arduino baud rate and set COM port
-    serialport = serial.Serial('COM3', 115200, timeout=1)
+    serialport = serial.Serial('COM10', 115200, timeout=1)
     temp = []
     #number of samples should be equal to arduino code
-    tim = list(range(50000))
+    tim = list(range(30000))
     serialport.write(serial_trigger.encode())
     while True:
         try:
             # Read data from the serial port
             data = serialport.readline().decode('utf-8', errors='replace').strip()
-            print(data)
             #only append voltage values
             if(data.isnumeric()):
                 temp.append(float(data))
+                print(f"GOT DATA: {data}")
                 print(data)
             #reached end of transmission
             if "Complete" in data:
-                print("Done")
+                print("Complete")
                 break
 
         except UnicodeDecodeError as e:
@@ -54,4 +54,3 @@ while True:
 
     iteration += 1
     print(f"Done writing CSV file: {csv_file_path}")
-
