@@ -3,13 +3,17 @@ import json
 
 class PushoverApp:
     
-    def __init__(self, application_token, user_token):
+    def __init__(self, application_token=None, user_token=None):
         self.app_token = application_token
         self.user_token = user_token
         self.message = "Water Sense"
         self.pushover_app = Pushover(self.app_token)
-        self.pushover_app.user(self.user_token)
+        self.result = False
     
+    def setUserToken(self, user_token):
+        self.user_token = user_token
+        self.pushover_app.user(self.user_token)
+
     def _handleException(self, error_string):
         error_s = error_string.strip("PushoverError")
         error_s = error_s.replace("\'", "")
