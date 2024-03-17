@@ -9,19 +9,23 @@
 <body>
     <h1>Water Sense Configuration</h1>
     <div class="container" style="margin-left: 50px;">
-        <form id="tokenForm">
+        <form id="tokenForm" action="/notification" method="post"> <!-- Changed action to the URL you want to POST to -->
             <label for="token">Notification Token Setup:</label>
-            <button type="tokenSubmit" id="tokenButton" onclick="token_callback();">Token</button>
+            <button type="submit" id="tokenButton">Token</button> <!-- Changed type to submit -->
         </form>
-        <div class="led"></div>
+        <div class="{{ token_status }}" id="token_status_led">
+            <label style="margin-left: 50px">Status </label>
+        </div>
     </div>
 
     <div class="container" style="margin-left: 50px;">
-    <form id="calibrationForm">
+    <form id="calibrationForm" action="/calibration" method="post">
         <label for="token" >Calibration: </label>
-        <button type="tokenSubmit" id="calibratinoButton" onclick="calibration_callback();">Calibration</button>
+        <button type="submit" id="calibrationButton" onclick="calibration_callback();">Calibration</button>
     </form>
-        <div class="led"></div>
+        <div class="led_red" id="calibration_status_led">
+            <label style="margin-left: 50px"> Status </label>
+        </div>
     </div>
     
     <div class="container" style="margin-left: 50px;">

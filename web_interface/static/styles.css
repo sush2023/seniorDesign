@@ -1,8 +1,26 @@
+:root {
+  --status_on: #ABFF00;
+  --status_off: #F00;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #eaf6ff; /* Light blue background*/
   margin: 0;
   padding: 0;
+}
+
+.notif-container{
+  max-width: 700px;
+  width: 700px; 
+  float: center; 
+  margin-left: 50px; 
+  height: 400px;
+  margin: 100px auto;
+  background-color: #fff; /* White container background */
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -42,9 +60,15 @@ button {
   font-size: 35px;
 }
 
-input[type="state"] {
+input[type="text"]{
   background-color: #edf6ff; /* Light blue input background */
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  height: 80px;
+  font-size: x-large;
 }
+
 button {
   background-color: #0096c7; /* Ocean blue button color */
   color: #fff;
@@ -59,21 +83,7 @@ button:focus{
   background-color: #000099; /*Darker blue on click */
 }
 
-/* led {
-  margin: 0 auto;
-  width: 24px;
-  height: 24px;
-  background-color: #F00;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
-  -webkit-animation: blinkRed 0.5s infinite;
-  -moz-animation: blinkRed 0.5s infinite;
-  -ms-animation: blinkRed 0.5s infinite;
-  -o-animation: blinkRed 0.5s infinite;
-  animation: blinkRed 0.5s infinite;
-} */
-
-.led {
+.led_red {
   float: left;
   height: 30px;
   width: 30px;
@@ -85,4 +95,83 @@ button:focus{
   background-color: #F00;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #F00 0 2px 12px;
+}
+.led_green {
+  float: left;
+  height: 30px;
+  width: 30px;
+  background-color: #ABFF00;
+  margin-top: 60px auto;
+  width: 20px;
+  height: 20px;
+  /* background-color: #ABFF00;*/
+  background-color: #ABFF00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #ABFF00 0 2px 12px;
+}
+
+
+/* CHECKBOX */
+.checkbox-container {
+  margin-bottom: 20px;
+}
+.checkbox-container input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0077b6; /* Deep blue border */
+  border-radius: 4px;
+  outline: none;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox-container input[type="checkbox"]:checked::before {
+  content: '\2713'; /* Checkmark character */
+  font-size: 14px;
+  color: #0077b6; /* Deep blue checkmark color */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.checkbox-container label {
+  margin-left: 10px;
+  color: #0077b6; /* Deep blue label color */
+  cursor: pointer;
+}
+
+/* Home button */
+.home-button {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #0077b6; /* Deep blue background */
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.home-button:hover {
+  background-color: #005691; /* Darker blue on hover */
+}
+
+
+
+.outer {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+}
+.outer > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+.outer .below {
+  z-index: 1;
+}
+.outer .top {
+  z-index: 2;
 }

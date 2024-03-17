@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Sense</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <a href="/" class="home-button">Home</a>
+  <h1>Water Sense Notification Setup</h1>
+  <div class="notif-container" style="float: center">
+    <form id="inputForm", method="post">
+      <!-- <label for="token">Connecting to Device</label> -->
+      <label for="User Token">Enter User Token:</label>
+      <input type="text" id="user_token" name="user_token">
+      <button type="submit" onclick="token_submit_callback()">Submit</button>
+    </form>
+    <div class="checkbox-container">
+      <input type="checkbox" id="acknowledge" name="agree" onclick="token_submit_acknowledge()">
+      <label for="acknowledge">Check if Notification Received</label>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
