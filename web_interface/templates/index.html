@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Water Sense</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-  <h1>Water Sense Configuration</h1>
-  <div class="container">
-    <form id="inputForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age">
-      <button type="submit">Submit</button>
+    <h1>Water Sense Configuration</h1>
+    <div class="container" style="margin-left: 50px;">
+        <form id="tokenForm">
+            <label for="token">Notification Token Setup:</label>
+            <button type="tokenSubmit" id="tokenButton" onclick="token_callback();">Token</button>
+        </form>
+        <div class="led"></div>
+    </div>
+
+    <div class="container" style="margin-left: 50px;">
+    <form id="calibrationForm">
+        <label for="token" >Calibration: </label>
+        <button type="tokenSubmit" id="calibratinoButton" onclick="calibration_callback();">Calibration</button>
     </form>
-    <div id="result"></div>
-  </div>
+        <div class="led"></div>
+    </div>
+    
+    <div class="container" style="margin-left: 50px;">
+        <form id="analyticsForm">
+            <label for="token">Analytics</label>
+            <button type="tokenSubmit" id="analyticsButton" onclick="analytics_callback();">Analytics</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 
-  <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
-</html>
-
-
+</html> 

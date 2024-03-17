@@ -1,17 +1,21 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #eaf6ff; /* Light blue background */
+  background-color: #eaf6ff; /* Light blue background*/
   margin: 0;
   padding: 0;
 }
 
 .container {
-  max-width: 600px;
-  margin: 50px auto;
+  max-width: 400px;
+  width: 500px; 
+  float: left; 
+  margin-left: 50px; 
+  height: 400px;
+  margin: 100px auto;
   background-color: #fff; /* White container background */
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
 }
 
 h1 {
@@ -29,20 +33,18 @@ label {
   color: #0077b6; /* Deep blue label color */
 }
 
-input[type="text"],
-input[type="number"],
+input[type="state"],
 button {
-  padding: 12px;
+  padding: 60px;
   margin-bottom: 20px;
   border: none;
   border-radius: 6px;
+  font-size: 35px;
 }
 
-input[type="text"],
-input[type="number"] {
+input[type="state"] {
   background-color: #edf6ff; /* Light blue input background */
 }
-
 button {
   background-color: #0096c7; /* Ocean blue button color */
   color: #fff;
@@ -53,4 +55,34 @@ button:hover {
   background-color: #0077b6; /* Darker blue on hover */
 }
 
-  
+button:focus{
+  background-color: #000099; /*Darker blue on click */
+}
+
+/* led {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #F00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+  -webkit-animation: blinkRed 0.5s infinite;
+  -moz-animation: blinkRed 0.5s infinite;
+  -ms-animation: blinkRed 0.5s infinite;
+  -o-animation: blinkRed 0.5s infinite;
+  animation: blinkRed 0.5s infinite;
+} */
+
+.led {
+  float: left;
+  height: 30px;
+  width: 30px;
+  background-color: #F00;
+  margin-top: 60px auto;
+  width: 20px;
+  height: 20px;
+  /* background-color: #ABFF00;*/
+  background-color: #F00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #F00 0 2px 12px;
+}
